@@ -10,7 +10,7 @@ WIDTH, HEIGHT = 500, 500
 WIN = pygame.display.set_mode((WIDTH,HEIGHT))
 BG = pygame.image.load("background.jpeg")
 pygame.display.set_caption("Whackk a mole!")
-pygame.display.set_icon(WIN) 
+
 
 PLAYER_WIDTH = 40
 PLAYER_HEIGHT = 60
