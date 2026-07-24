@@ -1,37 +1,24 @@
-import pygame
-import time
-import random
+import pygame, sys
+from pygame.locals import *
 
 
+pygame.init() 
 
+WIDTH, HEIGHT = 800, 600 
 
-pygame.init()
-WIDTH, HEIGHT = 500, 500
-WIN = pygame.display.set_mode((WIDTH,HEIGHT))
-BG = pygame.image.load("background.jpeg")
-pygame.display.set_caption("Whackk a mole!")
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 
+pygame.display.set_caption("Whack A Mole!")
 
-PLAYER_WIDTH = 40
-PLAYER_HEIGHT = 60
+running = True
 
-def draw():
-    WIN.blit(BG, (0,0))
+while running:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
     pygame.display.update()
 
-
-def main():
-    running = True
-
-    while running:
-        
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-                break
-        draw()
-    pygame.quit()
-
-
 if __name__ == "__main__":
-    main()
+    pass
