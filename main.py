@@ -17,6 +17,10 @@ text_font = pygame.font.SysFont("Arial", 40, bold=True)
 
 FPS = 60
 
+frames = pygame.time.Clock()
+
+frames.tick(FPS)
+
 def draw(text, font, color, x, y,):
     img = font.render(text,True, color)
     WIN.blit(img, (x, y))
@@ -25,9 +29,9 @@ while running:
 
     WIN.fill(grass)
 
-    frames = pygame.time.Clock()
-
-    frames.tick(FPS)
+    a = pygame.draw.rect(WIN, ((23, 191, 255)), pygame.Rect((20,40,400,300)))
+    
+    
     
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -35,11 +39,16 @@ while running:
             sys.exit()
 
         elif event.type == MOUSEBUTTONDOWN:
-            print("Mouse has been clicked!")
 
-    a = pygame.draw.rect(WIN, (12,21,71), pygame.Rect((20,40,400,300)))
+            print(f"The position is: {event.pos}!")
 
-    
+            flag_ = a.collidepoint(event.pos)
+
+            if flag_ == True:
+                print("HIT")
+            else:
+                print("MISS")
+
     pygame.draw.circle(WIN, (131, 101, 57), (190,230), 49)
     pygame.draw.circle(WIN, (131, 101, 57), (190+250,230), 49)
     pygame.draw.circle(WIN, (131, 101, 57), (190+250+250,230), 49)
@@ -52,4 +61,3 @@ while running:
     draw("SCORE",text_font, (12,98,205), 20, 20)
    
     pygame.display.flip()
-
