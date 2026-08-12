@@ -26,12 +26,14 @@ def draw(text, font, color, x, y,):
     WIN.blit(img, (x, y))
 
 while running:
+    frames.tick(FPS)
 
     WIN.fill(grass)
-
     a = pygame.draw.rect(WIN, ((23, 191, 255)), pygame.Rect((20,40,400,300)))
+
     
     
+   
     
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -61,3 +63,5 @@ while running:
     draw("SCORE",text_font, (12,98,205), 20, 20)
    
     pygame.display.flip()
+    
+
