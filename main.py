@@ -1,5 +1,7 @@
 import pygame, sys
 from pygame.locals import *
+import random
+import math
 
 pygame.init() 
 
@@ -11,7 +13,7 @@ pygame.display.set_caption("Whack A Mole!")
 
 grass = (34, 139, 34)
 
-running = True
+
 
 text_font = pygame.font.SysFont("Arial", 40, bold=True)
 
@@ -19,34 +21,46 @@ FPS = 60
 
 frames = pygame.time.Clock()
 
-frames.tick(FPS)
+positions = [
+(190, 230),
+(440, 230),
+(690, 230),(190, 480),
+(440, 480),(690, 480)]
+
+print(len(positions))
+
+x,y = 20,40
+
+a =  pygame.Rect(x,y,400,300)
 
 def draw(text, font, color, x, y,):
     img = font.render(text,True, color)
     WIN.blit(img, (x, y))
 
+
+running = True
 while running:
+
     frames.tick(FPS)
 
     WIN.fill(grass)
-    a = pygame.draw.rect(WIN, ((23, 191, 255)), pygame.Rect((20,40,400,300)))
+    
+    pygame.draw.rect(WIN, (82,120,231), a)
 
-    
-    
-   
-    
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
 
-        elif event.type == MOUSEBUTTONDOWN:
-
+        elif event.type == MOUSEBUTTONDOWN:        
             print(f"The position is: {event.pos}!")
 
             flag_ = a.collidepoint(event.pos)
 
             if flag_ == True:
+                rand_pos  = random.choice(positions)
+                print(rand_pos)
+                a.x, a.y = rand_pos
                 print("HIT")
             else:
                 print("MISS")
@@ -63,5 +77,3 @@ while running:
     draw("SCORE",text_font, (12,98,205), 20, 20)
    
     pygame.display.flip()
-    
-
