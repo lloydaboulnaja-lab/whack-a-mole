@@ -1,7 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 import random
-import math
+
 
 pygame.init() 
 
@@ -38,7 +38,27 @@ def draw(text, font, color, x, y,):
     WIN.blit(img, (x, y))
 
 
+
+class Mole:
+    def __init__(self,mole_pos,mole_rect,appearance):
+        self.mole_pos = mole_pos
+        self.mole_rect = mole_rect
+        self.appearance = appearance
+
+    def draw_mole(self):
+        return self.mole_rect
+        pygame.draw.rect()
+
+    def change_pos(self):
+        return self.appearance
+        pygame.draw.rect()
+    
+
+
+
+
 running = True
+
 while running:
 
     frames.tick(FPS)
@@ -59,7 +79,6 @@ while running:
 
             if flag_ == True:
                 rand_pos  = random.choice(positions)
-                print(rand_pos)
                 a.x, a.y = rand_pos
                 print("HIT")
             else:
