@@ -13,8 +13,6 @@ pygame.display.set_caption("Whack A Mole!")
 
 grass = (34, 139, 34)
 
-
-
 text_font = pygame.font.SysFont("Arial", 40, bold=True)
 
 FPS = 60
