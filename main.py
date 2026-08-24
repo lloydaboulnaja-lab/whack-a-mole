@@ -13,8 +13,6 @@ pygame.display.set_caption("Whack A Mole!")
 
 grass = (34, 139, 34)
 
-
-
 text_font = pygame.font.SysFont("Arial", 40, bold=True)
 
 FPS = 60
@@ -40,11 +38,11 @@ def draw(text, font, color, x, y,):
 
 
 class Mole:
-    def __init__(self):
-        pass
+    def __init__(self,mole_pos):
 
+        self.mole_pos = mole_pos
 
-
+        
 
 running = True
 
