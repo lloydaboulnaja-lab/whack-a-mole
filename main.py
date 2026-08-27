@@ -40,13 +40,39 @@ def draw(text, font, color, x, y,):
 
 
 class Mole:
+
     def __init__(self,pos):
         self.pos = pos
+        pos = x,y
+        
+        
+    
 
+
+
+
+    def draw_mole(self,surface):
+        self.surface = surface
+        
+
+        body = pygame.draw.circle(WIN, (57, 45, 43), self.pos, 32)
+        left_ear = pygame.draw.circle(WIN, (57, 45, 43), (165, 210), 10)  
+        right_ear = pygame.draw.circle(WIN, (57, 45, 43), (215, 210), 10)  
+        left_pink = pygame.draw.circle(WIN, (235, 150, 165), (165, 210), 5)  
+        right_pink = pygame.draw.circle(WIN, (235, 150, 165), (215, 210), 5)  
+        left_eye = pygame.draw.circle(WIN, (0, 0, 0), (178, 225), 3)  
+        right_eye = pygame.draw.circle(WIN, (0, 0, 0), (202, 225), 3)  
+        nose = pygame.draw.circle(WIN, (235, 150, 165), (190, 245), 6)
+        mouth = pygame.draw.line(WIN, (0, 0, 0), (187, 252), (193, 252), 2)
+        
+
+    def change_characteristics(self):
+        pass
         
 
 
-
+my_mole = Mole((190,230))
+my_mole.change_characteristics()
 
 running = True
 
@@ -70,37 +96,26 @@ while running:
 
             if flag_ == True:
                 rand_pos  = random.choice(positions)
+                
                 a.x, a.y = rand_pos
                 print("HIT")
             else:
                 print("MISS")
 
     
-
-    
     
     pygame.draw.circle(WIN, (131, 101, 57), (190,230), 49)
+    pygame.draw.circle(WIN, (131, 101, 57), (440,230), 49)
+    pygame.draw.circle(WIN, (131, 101, 57), (690,230), 49)
+    pygame.draw.circle(WIN, (131, 101, 57), (190,480), 49)
+    pygame.draw.circle(WIN, (131, 101, 57), (440,480), 49)
+    pygame.draw.circle(WIN, (131, 101, 57), (690,480), 49)
 
-    pygame.draw.circle(WIN, (57, 45, 43), (190,230), 32)
-    pygame.draw.circle(WIN, (57, 45, 43), (165, 210), 10)  
-    pygame.draw.circle(WIN, (57, 45, 43), (215, 210), 10)  
-    pygame.draw.circle(WIN, (235, 150, 165), (165, 210), 5)  
-    pygame.draw.circle(WIN, (235, 150, 165), (215, 210), 5)  
-    pygame.draw.circle(WIN, (57, 45, 43), (190, 230), 32)
-    pygame.draw.circle(WIN, (0, 0, 0), (178, 225), 3)  
-    pygame.draw.circle(WIN, (0, 0, 0), (202, 225), 3)  
-    pygame.draw.circle(WIN, (235, 150, 165), (190, 245), 6)
-    pygame.draw.line(WIN, (0, 0, 0), (187, 252), (193, 252), 2)
-
-
-    pygame.draw.circle(WIN, (131, 101, 57), (190+250,230), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (190+250+250,230), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (190,230+250), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (190+250,230+250), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (190+250+250,230+250), 49)
     
+    my_mole.draw_mole(WIN)
+
+
 
     draw("SCORE",text_font, (12,98,205), 20, 20)
    
     pygame.display.flip()
-    
