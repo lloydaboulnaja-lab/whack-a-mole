@@ -43,9 +43,8 @@ class Mole:
 
     def __init__(self,pos):
         self.pos = pos
-        pos = x,y
-        
-        
+
+
     
 
 
@@ -54,7 +53,7 @@ class Mole:
     def draw_mole(self,surface):
         self.surface = surface
         
-
+       
         body = pygame.draw.circle(WIN, (57, 45, 43), self.pos, 32)
         left_ear = pygame.draw.circle(WIN, (57, 45, 43), (165, 210), 10)  
         right_ear = pygame.draw.circle(WIN, (57, 45, 43), (215, 210), 10)  
@@ -65,13 +64,14 @@ class Mole:
         nose = pygame.draw.circle(WIN, (235, 150, 165), (190, 245), 6)
         mouth = pygame.draw.line(WIN, (0, 0, 0), (187, 252), (193, 252), 2)
         
-
+    
+        
     def change_characteristics(self):
         pass
         
 
 
-my_mole = Mole((190,230))
+my_mole = Mole((440,230))
 my_mole.change_characteristics()
 
 running = True
@@ -119,3 +119,4 @@ while running:
     draw("SCORE",text_font, (12,98,205), 20, 20)
    
     pygame.display.flip()
+    
