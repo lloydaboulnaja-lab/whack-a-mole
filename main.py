@@ -63,11 +63,7 @@ class Mole:
         right_eye = pygame.draw.circle(WIN, (0, 0, 0), (202, 225), 3)  
         nose = pygame.draw.circle(WIN, (235, 150, 165), (190, 245), 6)
         mouth = pygame.draw.line(WIN, (0, 0, 0), (187, 252), (193, 252), 2)
-        
     
-        
-    def change_characteristics(self):
-        pass
         
 
 
