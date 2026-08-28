@@ -27,11 +27,11 @@ positions = [
 (690, 230),(190, 480),
 (440, 480),(690, 480)]
 
-print(len(positions))
+rand_pos  = random.choice(positions)
 
-e,f = 20,40
+e,f = -50,100
 
-a =  pygame.Rect(e,f,400,300)
+a =  pygame.Rect(e,f,150,120)
 
 def draw(text, font, color, x, y,):
     img = font.render(text,True, color)
@@ -62,7 +62,7 @@ class Mole:
         
 
 
-my_mole = Mole((440,230))
+my_mole = Mole(rand_pos)
 
 
 running = True
@@ -87,6 +87,7 @@ while running:
 
             if flag_ == True:
                 rand_pos  = random.choice(positions)
+                
                 a.x, a.y = rand_pos
                 print("HIT")
             else:
