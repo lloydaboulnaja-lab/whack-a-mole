@@ -29,9 +29,6 @@ positions = [
 
 rand_pos  = random.choice(positions)
 
-e,f = -50,100
-
-a =  pygame.Rect(e,f,150,120)
 
 def draw(text, font, color, x, y,):
     img = font.render(text,True, color)
@@ -46,11 +43,13 @@ class Mole:
         self.pos = pos
 
 
+        self.mole_rect = pygame.Rect(50,60,64,64)
+           
+
     def draw_mole(self,surface):
 
         x,y = self.pos
         
-       
         body = pygame.draw.circle(WIN, (57, 45, 43), self.pos, 32)
         left_ear = pygame.draw.circle(WIN, (57, 45, 43), (x-25,y-20), 10)  
         right_ear = pygame.draw.circle(WIN, (57, 45, 43), (x+25, y-20), 10)  
@@ -59,10 +58,15 @@ class Mole:
         left_eye = pygame.draw.circle(WIN, (0, 0, 0), (x-12, y-5), 3)  
         right_eye = pygame.draw.circle(WIN, (0, 0, 0), (x+12, y-5), 3)  
         nose = pygame.draw.circle(WIN, (235, 150, 165), (x, y+15), 6)
-        
+
+
+    def change_pos(self):
+
+        pass
 
 
 my_mole = Mole(rand_pos)
+
 
 
 running = True
@@ -73,7 +77,7 @@ while running:
 
     WIN.fill(grass)
     
-    pygame.draw.rect(WIN, (82,120,231), a)
+    pygame.draw.rect(WIN, (12,82,201),my_mole.mole_rect)
 
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -83,16 +87,17 @@ while running:
         elif event.type == MOUSEBUTTONDOWN:        
             print(f"The position is: {event.pos}!")
 
-            flag_ = a.collidepoint(event.pos)
+            flag_ = my_mole.mole_rect.collidepoint(event.pos)
 
             if flag_ == True:
                 rand_pos  = random.choice(positions)
                 
-                a.x, a.y = rand_pos
+                my_mole.mole_rect.x, my_mole.mole_rect.y = rand_pos
                 print("HIT")
             else:
                 print("MISS")
 
+    
     
     
     pygame.draw.circle(WIN, (131, 101, 57), (190,230), 49)
