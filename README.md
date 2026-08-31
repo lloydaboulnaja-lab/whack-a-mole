@@ -1,64 +1,75 @@
-🐹 Whack A Mole!
+# 🐹 Whack A Mole!
 
-A simple Whack A Mole game built with Python and Pygame.
+A simple Whack A Mole game built with **Python and Pygame**.
 
 The player clicks on the mole to score points while the mole moves between different holes automatically and randomly.
 
-🎮 Features
-Mole designed using pygame.draw shapes
-Six different mole positions
-Random mole movement
-Automatic movement every second
-Mouse collision detection using a pygame.Rect
-Mole and hitbox move together
-Score system
-Hit and miss detection
+## 🎮 Features
 
-🛠️ Technologies
-Python
-Pygame
-Object-Oriented Programming (OOP)
-Git & GitHub
+* Mole designed using `pygame.draw` shapes
+* Six different mole positions
+* Random mole movement
+* Automatic movement every second
+* Mouse collision detection using a `pygame.Rect`
+* Mole and hitbox move together
+* Score system
+* Hit and miss detection
 
-🚀 How to Run
+## 🛠️ Technologies
 
-Clone the repository:
+* Python
+* Pygame
+* Object-Oriented Programming (OOP)
+* Git & GitHub
 
-git clone <repository-url>
+## 🚀 How to Run
 
-Install Pygame:
+1. Clone the repository:
 
-pip install pygame
+   ```bash
+   git clone <repository-url>
+   ```
 
-Run the game:
+2. Install Pygame:
 
-python main.py
-📚 What I Learned
+   ```bash
+   pip install pygame
+   ```
+
+3. Run the game:
+
+   ```bash
+   python main.py
+   ```
+
+## 📚 What I Learned
 
 This project helped me practise:
 
-Creating classes and objects in Python
-Using pygame.Rect for collision detection
-Working with mouse events
-Using pygame.time.get_ticks() for timed events
-Generating random positions with Python's random module
-Creating game objects using pygame.draw
-Connecting an object's position with its collision hitbox
-Using Git and GitHub to manage and track my project
-🔮 Future Improvements
+* Creating classes and objects in Python
+* Using `pygame.Rect` for collision detection
+* Working with mouse events
+* Using `pygame.time.get_ticks()` for timed events
+* Generating random positions with Python's `random` module
+* Creating game objects using `pygame.draw`
+* Connecting an object's position with its collision hitbox
+* Using Git and GitHub to manage and track my project
+
+## 🔮 Future Improvements
 
 Planned improvements include:
 
-Main menu
-Countdown/game timer
-Game-over system
-Improved mole animations
-Better graphics
-Difficulty progression
-Sound effects and music
-High-score system
-👤 Author
+* Main menu
+* Countdown/game timer
+* Game-over system
+* Improved mole animations
+* Better graphics
+* Difficulty progression
+* Sound effects and music
+* High-score system
 
-Lloyd Aboulnaja
+## 👤 Author
+
+**Lloyd Aboulnaja**
 
 Built as a personal project while learning Python, Pygame, OOP, Git and GitHub.
