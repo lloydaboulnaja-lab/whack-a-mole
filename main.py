@@ -19,6 +19,8 @@ FPS = 60
 
 score = 0 
 
+game_state = "playing"
+
 frames = pygame.time.Clock()
 
 positions = [
@@ -82,54 +84,65 @@ running = True
 
 last_moved = pygame.time.get_ticks()
 
+current_time = pygame.time.get_ticks()
 
-
-while running:  # main game loop
+def playing_game():
 
     frames.tick(FPS)
-
-    current_time = pygame.time.get_ticks()
-
+    
+    
+    
     if current_time - last_moved >= 1000:
         my_mole.change_pos()
+
+
         last_moved = current_time
-        
-
-    WIN.fill(grass)
+            
     
+    WIN.fill(grass)
+        
     pygame.draw.rect(WIN, (34, 139, 34, 0.5),my_mole.mole_rect)
-
-
+    
+    
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-
+    
         elif event.type == MOUSEBUTTONDOWN:    
-               
+                   
             if my_mole.mole_rect.collidepoint(event.pos) == True:  # detecting if the mole has been hit
-
+    
                 score += 1
                 print("HIT")
-
-            else:
-
-                print("MISS")
-
-
-    pygame.draw.circle(WIN, (131, 101, 57), (190,230), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (440,230), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (690,230), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (190,480), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (440,480), 49)
-    pygame.draw.circle(WIN, (131, 101, 57), (690,480), 49)
-
     
-    my_mole.draw_mole(WIN)
+            else:
+    
+                print("MISS")
+    
+    
+        pygame.draw.circle(WIN, (131, 101, 57), (190,230), 49)
+        pygame.draw.circle(WIN, (131, 101, 57), (440,230), 49)
+        pygame.draw.circle(WIN, (131, 101, 57), (690,230), 49)
+        pygame.draw.circle(WIN, (131, 101, 57), (190,480), 49)
+        pygame.draw.circle(WIN, (131, 101, 57), (440,480), 49)
+        pygame.draw.circle(WIN, (131, 101, 57), (690,480), 49)
+    
+        
+        my_mole.draw_mole(WIN)
+    
+        draw(f"SCORE: {score}",text_font, (12,98,205), 20, 20)
 
 
 
+while running:  # main game loop
 
-    draw(f"SCORE: {score}",text_font, (12,98,205), 20, 20)
+    if game_state == "playing":
+
+        playing_game()
+
+    else:
+
+        pass
    
     pygame.display.flip()
