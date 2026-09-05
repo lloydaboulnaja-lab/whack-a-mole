@@ -84,13 +84,11 @@ running = True
 
 last_moved = pygame.time.get_ticks()
 
-current_time = pygame.time.get_ticks()
-
 def playing_game():
 
     frames.tick(FPS)
     
-    
+    current_time = pygame.time.get_ticks()
     
     if current_time - last_moved >= 1000:
         my_mole.change_pos()
@@ -138,11 +136,8 @@ def playing_game():
 while running:  # main game loop
 
     if game_state == "playing":
-
         playing_game()
-
     else:
-
         pass
    
     pygame.display.flip()
